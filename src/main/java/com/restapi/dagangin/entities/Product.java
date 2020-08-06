@@ -17,18 +17,15 @@ import lombok.ToString;
 @AllArgsConstructor
 @NoArgsConstructor
 @ToString
-public class Product {
+public class Product extends AbstractEntity<Integer>{
 
-    @Id
-    @GeneratedValue
-    private Integer idProduct;
-
+   
     private String name;
     private Integer qty;
     private Integer price;
 
-    @OneToMany(targetEntity = Transaction.class, cascade = CascadeType.ALL)
-    @JoinColumn(name = "id_product", referencedColumnName = "idProduct")
-    private List<Transaction> trans;
+//    @OneToMany(targetEntity = Transaction.class, cascade = CascadeType.ALL)
+//    @JoinColumn(name = "id_product", referencedColumnName = "idProduct")
+//    private List<Transaction> trans;
 
 }
